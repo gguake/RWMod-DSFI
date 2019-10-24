@@ -10,4 +10,5 @@
   <IdleJob_PracticeMelee.reportString>TargetA의 활용법을 연습하는 중.</IdleJob_PracticeMelee.reportString>
   <IdleJob_ThrowingStone.reportString>작은 돌을 던지는 중.</IdleJob_ThrowingStone.reportString>
   <IdleJob_Graffiti.reportString>바닥에 낙서하는 중.</IdleJob_Graffiti.reportString>
+  <IdleJob_CleaningGun.reportString>TargetA를 손질하는 중.</IdleJob_CleaningGun.reportString>
 </LanguageData>

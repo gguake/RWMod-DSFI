@@ -76,5 +76,6 @@
 		<driverClass>DSFI.Jobs.IdleJobDriver_CleaningGun</driverClass>
 		<reportString>cleaning TargetA.</reportString>
 		<casualInterruptible>true</casualInterruptible>
+		<alwaysShowWeapon>true</alwaysShowWeapon>
 	</JobDef>
 </Defs>

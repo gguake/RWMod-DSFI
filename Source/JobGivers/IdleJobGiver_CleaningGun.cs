@@ -43,8 +43,8 @@ namespace DSFI.JobGivers
             {
                 return null;
             }
-
-            if (weapon.HitPoints >= weapon.MaxHitPoints)
+            
+            if (weapon.HitPoints >= weapon.MaxHitPoints || weapon.HitPoints / (float)weapon.MaxHitPoints < 0.6f)
             {
                 return null;
             }

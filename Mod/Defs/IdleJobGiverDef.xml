@@ -91,7 +91,7 @@
 	<DSFI.IdleJobGiverDef>
 		<defName>IdleJobGiver_CleaningGun</defName>
 		<giverClass>DSFI.JobGivers.IdleJobGiver_CleaningGun</giverClass>
-        <probabilityWeight>6000</probabilityWeight>
+        <probabilityWeight>1</probabilityWeight>
         <usefulness>1</usefulness>
 	</DSFI.IdleJobGiverDef>
 </Defs>

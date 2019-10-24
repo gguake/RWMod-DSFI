@@ -42,7 +42,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Patch\HarmonyInstance.cs" />
     <Compile Include="JobGivers\IdleJobGiver.cs" />
     <Compile Include="JobGivers\IdleJobGiverDef.cs" />
     <Compile Include="JobGivers\IdleJobGiver_Graffiti.cs" />
