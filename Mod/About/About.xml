@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Do Something for Idle</name>
+	<author>gguake</author>
+	<supportedVersions>
+		<li>1.0</li>
+	</supportedVersions>
+	<description>
+This mod makes colonists to do something when they are idle.
+	</description>
+</ModMetaData>

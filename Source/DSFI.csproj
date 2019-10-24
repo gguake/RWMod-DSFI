@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{668F75D1-B06C-4F07-BC9A-E5D40765BFA4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DSFI</RootNamespace>
+    <AssemblyName>DSFI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Build|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Mod\Assemblies\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\Steam\steamapps\common\RimWorld\Mods\alienrace\Assemblies\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Patch\HarmonyInstance.cs" />
+    <Compile Include="JobGivers\IdleJobGiver.cs" />
+    <Compile Include="JobGivers\IdleJobGiverDef.cs" />
+    <Compile Include="JobGivers\IdleJobGiver_Graffiti.cs" />
+    <Compile Include="JobGivers\IdleJobGiver_CleaningGun.cs" />
+    <Compile Include="JobGivers\IdleJobGiver_ThrowingStone.cs" />
+    <Compile Include="JobGivers\IdleJobGiver_PracticeMelee.cs" />
+    <Compile Include="JobGivers\IdleJobGiver_MendItem.cs" />
+    <Compile Include="JobGivers\IdleJobGiver_LookAroundRoom.cs" />
+    <Compile Include="JobGivers\IdleJobGiver_MessingAround.cs" />
+    <Compile Include="JobGivers\IdleJobGiver_ObservingAnimal.cs" />
+    <Compile Include="JobGivers\IdleJobGiver_WatchDoing.cs" />
+    <Compile Include="JobGivers\IdleJobGiver_TakeNap.cs" />
+    <Compile Include="JobGivers\IdleJobGiver_Wander.cs" />
+    <Compile Include="DefOf.cs" />
+    <Compile Include="Jobs\IdleJobDriver_Graffiti.cs" />
+    <Compile Include="Jobs\IdleJobDriver_CleaningGun.cs" />
+    <Compile Include="Jobs\IdleJobDriver_ThrowingStone.cs" />
+    <Compile Include="Jobs\IdleJobDriver_PracticeMelee.cs" />
+    <Compile Include="Jobs\IdleJobDriver_LookAroundRoom.cs" />
+    <Compile Include="Jobs\IdleJobDriver_MessingAround.cs" />
+    <Compile Include="Jobs\IdleJobDriver_ObservingAnimal.cs" />
+    <Compile Include="Jobs\IdleJobDriver_TakeNap.cs" />
+    <Compile Include="Jobs\IdleJobDriver_WatchDoing.cs" />
+    <Compile Include="Jobs\IdleJobDriver_MendItem.cs" />
+    <Compile Include="ThinkNode_ColonistIdle.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Toils\Toils_DSFI.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

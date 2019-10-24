@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.779
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSFI", "DSFI.csproj", "{668F75D1-B06C-4F07-BC9A-E5D40765BFA4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Build|Any CPU = Build|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{668F75D1-B06C-4F07-BC9A-E5D40765BFA4}.Build|Any CPU.ActiveCfg = Build|Any CPU
+		{668F75D1-B06C-4F07-BC9A-E5D40765BFA4}.Build|Any CPU.Build.0 = Build|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C3DEA0BA-88EF-4EAA-B753-3DEF9B835508}
+	EndGlobalSection
+EndGlobal

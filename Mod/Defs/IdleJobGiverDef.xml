@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<DSFI.IdleJobGiverDef>
+		<defName>IdleJobGiver_Wander</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_Wander</giverClass>
+        <probabilityWeight>180</probabilityWeight>
+        <usefulness>0</usefulness>
+	</DSFI.IdleJobGiverDef>
+
+	<DSFI.IdleJobGiverDef_TakeNap>
+		<defName>IdleJobGiver_TakeNap</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_TakeNap</giverClass>
+        <probabilityWeight>20</probabilityWeight>
+        <usefulness>-2</usefulness>
+        <restRequirement>0.75</restRequirement>
+	</DSFI.IdleJobGiverDef_TakeNap>
+
+	<DSFI.IdleJobGiverDef>
+		<defName>IdleJobGiver_MendItem</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_MendItem</giverClass>
+        <probabilityWeight>2</probabilityWeight>
+        <usefulness>2</usefulness>
+	</DSFI.IdleJobGiverDef>
+
+	<DSFI.IdleJobGiverDef_WatchDoing>
+		<defName>IdleJobGiver_WatchResearch</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_WatchDoing</giverClass>
+        <probabilityWeight>5</probabilityWeight>
+        <usefulness>-1</usefulness>
+        <searchDistance>10</searchDistance>
+        <jobDef>IdleJob_WatchResearch</jobDef>
+        <targetJobDriver>JobDriver_Research</targetJobDriver>
+	</DSFI.IdleJobGiverDef_WatchDoing>
+
+	<DSFI.IdleJobGiverDef_WatchDoing>
+		<defName>IdleJobGiver_WatchWorking</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_WatchDoing</giverClass>
+        <probabilityWeight>5</probabilityWeight>
+        <usefulness>-1</usefulness>
+        <searchDistance>10</searchDistance>
+        <jobDef>IdleJob_WatchWorking</jobDef>
+        <targetJobDriver>JobDriver_DoBill</targetJobDriver>
+	</DSFI.IdleJobGiverDef_WatchDoing>
+
+	<DSFI.IdleJobGiverDef_ObservingAnimal>
+		<defName>IdleJobGiver_ObservingAnimal</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_ObservingAnimal</giverClass>
+        <probabilityWeight>7</probabilityWeight>
+        <usefulness>-1</usefulness>
+        <searchDistance>16</searchDistance>
+	</DSFI.IdleJobGiverDef_ObservingAnimal>
+
+	<DSFI.IdleJobGiverDef>
+		<defName>IdleJobGiver_MessingAround</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_MessingAround</giverClass>
+        <probabilityWeight>4</probabilityWeight>
+        <usefulness>-2</usefulness>
+	</DSFI.IdleJobGiverDef>
+
+	<DSFI.IdleJobGiverDef_LookAroundRoom>
+		<defName>IdleJobGiver_LookAroundRoom</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_LookAroundRoom</giverClass>
+        <probabilityWeight>4</probabilityWeight>
+        <usefulness>-2</usefulness>
+        <requiredOpinion>70</requiredOpinion>
+	</DSFI.IdleJobGiverDef_LookAroundRoom>
+
+	<DSFI.IdleJobGiverDef>
+		<defName>IdleJobGiver_PracticeMelee</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_PracticeMelee</giverClass>
+        <probabilityWeight>7</probabilityWeight>
+        <usefulness>1</usefulness>
+	</DSFI.IdleJobGiverDef>
+
+	<DSFI.IdleJobGiverDef>
+		<defName>IdleJobGiver_ThrowingStone</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_ThrowingStone</giverClass>
+        <probabilityWeight>6</probabilityWeight>
+        <usefulness>-1</usefulness>
+	</DSFI.IdleJobGiverDef>
+
+<!--
+	<DSFI.IdleJobGiverDef>
+		<defName>IdleJobGiver_Graffiti</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_Graffiti</giverClass>
+        <probabilityWeight>6</probabilityWeight>
+        <usefulness>-1</usefulness>
+	</DSFI.IdleJobGiverDef>
+-->
+
+	<DSFI.IdleJobGiverDef>
+		<defName>IdleJobGiver_CleaningGun</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_CleaningGun</giverClass>
+        <probabilityWeight>6000</probabilityWeight>
+        <usefulness>1</usefulness>
+	</DSFI.IdleJobGiverDef>
+</Defs>
