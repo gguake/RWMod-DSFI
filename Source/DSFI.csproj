@@ -66,6 +66,7 @@
     <Compile Include="Jobs\IdleJobDriver_TakeNap.cs" />
     <Compile Include="Jobs\IdleJobDriver_WatchDoing.cs" />
     <Compile Include="Jobs\IdleJobDriver_MendItem.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="ThinkNode_ColonistIdle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Toils\Toils_DSFI.cs" />

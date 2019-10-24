@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DSFI_ConfigWanderMultiplier>Wandering Multiplier</DSFI_ConfigWanderMultiplier>
+  <DSFI_TT_ConfigWanderMultiplier>Multiplier for wandering instead of doing something. If you lower it, colonists try more somethings.</DSFI_TT_ConfigWanderMultiplier>
+</LanguageData>

@@ -3,7 +3,7 @@
 	<DSFI.IdleJobGiverDef>
 		<defName>IdleJobGiver_Wander</defName>
 		<giverClass>DSFI.JobGivers.IdleJobGiver_Wander</giverClass>
-        <probabilityWeight>180</probabilityWeight>
+        <probabilityWeight>160</probabilityWeight>
         <usefulness>0</usefulness>
 	</DSFI.IdleJobGiverDef>
 

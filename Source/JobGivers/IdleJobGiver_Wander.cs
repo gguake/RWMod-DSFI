@@ -11,9 +11,16 @@ namespace DSFI.JobGivers
 {
     class IdleJobGiver_Wander : IdleJobGiver<IdleJobGiverDef>
     {
+        public override float GetWeight(Pawn pawn, Trait traitIndustriousness)
+        {
+            return base.GetWeight(pawn, traitIndustriousness) * modSettings.wanderMultiplier;
+        }
+
         public override Job TryGiveJob(Pawn pawn)
         {
             return null;
         }
+
+        private DSFISettings modSettings = LoadedModManager.GetMod<DSFIMod>().GetSettings<DSFISettings>();
     }
 }
