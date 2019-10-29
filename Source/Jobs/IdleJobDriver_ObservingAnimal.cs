@@ -29,7 +29,7 @@ namespace DSFI.Jobs
             observing.FailOnDestroyedOrNull(TargetIndex.A);
             observing.socialMode = RandomSocialMode.SuperActive;
             observing.handlingFacing = true;
-            observing.FailOn(() => !JoyUtility.EnjoyableOutsideNow(this.pawn, null));
+            observing.FailOn(() => !JoyUtility.EnjoyableOutsideNow(this.pawn, null) || this.pawn.Position.IsForbidden(this.pawn));
             observing.tickAction = () =>
             {
                 if (pawn.IsHashIntervalTick(20))

@@ -25,6 +25,7 @@ namespace DSFI.Jobs
             mending.socialMode = RandomSocialMode.SuperActive;
             mending.WithProgressBar(TargetIndex.A, () => workDone / mendingWorks);
             mending.PlaySustainerOrSound(SoundDefOf.Interact_CleanFilth);
+            mending.FailOn(() => this.pawn.Position.IsForbidden(this.pawn));
             mending.tickAction = () =>
             {
                 workDone++;

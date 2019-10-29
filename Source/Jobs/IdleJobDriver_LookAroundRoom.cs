@@ -26,6 +26,7 @@ namespace DSFI.Jobs
             yield return Toils_Goto.GotoCell(TargetIndex.B, PathEndMode.OnCell);
 
             Toil looking = Toils_General.Wait(1500);
+            looking.FailOn(() => this.TargetB.Cell.IsForbidden(this.pawn));
             looking.tickAction = () =>
             {
                 

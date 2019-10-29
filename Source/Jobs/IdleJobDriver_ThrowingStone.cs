@@ -27,7 +27,7 @@ namespace DSFI.Jobs
 
             Toil throwing = Toils_General.Wait(2000, TargetIndex.A);
             throwing.socialMode = RandomSocialMode.Normal;
-            throwing.FailOn(() => !JoyUtility.EnjoyableOutsideNow(this.pawn, null));
+            throwing.FailOn(() => !JoyUtility.EnjoyableOutsideNow(this.pawn, null) || this.TargetB.Cell.IsForbidden(this.pawn));
             throwing.tickAction = () =>
             {
                 if (this.pawn.IsHashIntervalTick(400))

@@ -30,6 +30,7 @@ namespace DSFI.Jobs
 
             Toil practice = Toils_General.Wait(2000);
             practice.socialMode = RandomSocialMode.Normal;
+            practice.FailOn(() => this.TargetB.Cell.IsForbidden(this.pawn));
             practice.tickAction = () =>
             {
                 if (pawn.IsHashIntervalTick(200))

@@ -2,4 +2,8 @@
 <LanguageData>
   <DSFI_ConfigWanderMultiplier>Wandering Multiplier</DSFI_ConfigWanderMultiplier>
   <DSFI_TT_ConfigWanderMultiplier>Multiplier for wandering instead of doing something. If you lower it, colonists try more somethings.</DSFI_TT_ConfigWanderMultiplier>
+
+  <DSFI_SpendingTimeMultiplier>Spending Time Multiplier</DSFI_SpendingTimeMultiplier>
+  <DSFI_TT_SpendingTimeMultiplier>Multiplier for time about to do something. If you lower it, colonists uses more time for idle.
+  If you have a lot of colonist in settlement, it is recommended to raise this option.</DSFI_TT_SpendingTimeMultiplier>
 </LanguageData>
