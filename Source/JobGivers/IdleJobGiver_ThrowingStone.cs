@@ -47,7 +47,7 @@ namespace DSFI.JobGivers
 
             IntVec3 position = IntVec3.Invalid;
             
-            RCellFinder.TryFindRandomSpotJustOutsideColony(pawn.Position, pawn.Map, pawn, out position, (IntVec3 x) => pawn.CanReserveAndReach(x, PathEndMode.Touch, Danger.None));
+            RCellFinder.TryFindRandomSpotJustOutsideColony(pawn.Position, pawn.Map, pawn, out position, (IntVec3 x) => pawn.CanReach(x, PathEndMode.Touch, Danger.None));
             if (!position.IsValid)
             {
                 return null;
@@ -56,7 +56,8 @@ namespace DSFI.JobGivers
             IntVec3 standPosition = IntVec3.Invalid;
             (from x in GenRadial.RadialCellsAround(position, 4.0f, true)
              where x.DistanceToSquared(position) > 9 &&
-                   GenSight.LineOfSight(position, x, pawn.Map)
+                   GenSight.LineOfSight(position, x, pawn.Map) && 
+                   pawn.CanReserve(x)
              select x).TryRandomElement(out standPosition);
             if (standPosition == null)
             {
