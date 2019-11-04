@@ -17,6 +17,11 @@ namespace DSFI
 {
     public class ThinkNode_ColonistIdle : ThinkNode
     {
+        public ThinkNode_ColonistIdle()
+        {
+            Log.Message("[DSFI] Initialized");
+        }
+
         public override ThinkResult TryIssueJobPackage(Pawn pawn, JobIssueParams jobParams)
         {
             Lord lord = pawn.GetLord();
