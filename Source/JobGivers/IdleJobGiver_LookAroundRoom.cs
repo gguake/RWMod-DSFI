@@ -27,7 +27,7 @@ namespace DSFI.JobGivers
             Map map = pawn.Map;
             
             roomOwners.Clear();
-            foreach (Pawn owner in pawn.relations.RelatedPawns)
+            foreach (Pawn owner in pawn.relations.RelatedPawns.Where(x => x.Map == pawn.Map))
             {
                 if (pawn.relations.OpinionOf(owner) < this.def.requiredOpinion)
                 {
