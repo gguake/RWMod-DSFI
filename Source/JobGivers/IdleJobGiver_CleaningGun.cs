@@ -11,26 +11,6 @@ namespace DSFI.JobGivers
 {
     public class IdleJobGiver_CleaningGun : IdleJobGiver<IdleJobGiverDef>
     {
-        public override float GetWeight(Pawn pawn, Trait traitIndustriousness)
-        {
-            if (pawn.story.WorkTagIsDisabled(WorkTags.Violent))
-            {
-                return 0f;
-            }
-
-            if (pawn.story.WorkTagIsDisabled(WorkTags.Crafting))
-            {
-                return 0f;
-            }
-
-            if (!pawn.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation))
-            {
-                return 0f;
-            }
-
-            return base.GetWeight(pawn, traitIndustriousness);
-        }
-
         public override Job TryGiveJob(Pawn pawn)
         {
             Thing weapon = null;

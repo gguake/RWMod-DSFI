@@ -34,8 +34,17 @@ namespace DSFI
                     Job job = jobGiver.TryGiveJob(pawn);
                     if (job != null)
                     {
+#if DEBUG
+                        Log.Message(string.Format("idle job {0} to {1}", jobGiver.GetType().Name, pawn.Name));
+#endif
                         return new ThinkResult(job, this, null, false);
                     }
+#if DEBUG
+                    else
+                    {
+                        Log.Message(string.Format("idle job {0} to {1} but job is null", jobGiver.GetType().Name, pawn.Name));
+                    }
+#endif
                 }
             }
 

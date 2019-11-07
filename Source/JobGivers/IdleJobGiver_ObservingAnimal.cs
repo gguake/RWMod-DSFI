@@ -10,23 +10,8 @@ using RimWorld;
 
 namespace DSFI.JobGivers
 {
-    public class IdleJobGiver_ObservingAnimal : IdleJobGiver<IdleJobGiverDef_ObservingAnimal>
+    public class IdleJobGiver_ObservingAnimal : IdleJobGiver<IdleJobGiverDef>
     {
-        public override float GetWeight(Pawn pawn, Trait traitIndustriousness)
-        {
-            if (pawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Handling))
-            {
-                return 0f;
-            }
-
-            if (pawn.story.WorkTagIsDisabled(WorkTags.Animals))
-            {
-                return 0f;
-            }
-
-            return base.GetWeight(pawn, traitIndustriousness);
-        }
-
         static HashSet<Pawn> pawns = new HashSet<Pawn>();
         public override Job TryGiveJob(Pawn pawn)
         {
@@ -39,10 +24,17 @@ namespace DSFI.JobGivers
             foreach (Thing thing in GenRadial.RadialDistinctThingsAround(pawn.Position, pawn.Map, this.def.searchDistance, true))
             {
                 Pawn targetPawn = thing as Pawn;
-                if (targetPawn != null && targetPawn.RaceProps.Animal)
+                if (targetPawn == null || !targetPawn.RaceProps.Animal)
                 {
-                    pawns.Add(targetPawn);
+                    continue;
                 }
+
+                if (targetPawn.HostileTo(pawn))
+                {
+                    continue;
+                }
+
+                pawns.Add(targetPawn);
             }
 
             if (pawns.Any())

@@ -47,9 +47,8 @@ namespace DSFI.Toils
                     {
                         IntVec3 v = targetPawn.Position + t;
                         if (v.InBounds(map) && v.Walkable(map) && v != pawn.Position && 
-                            pawn.CanReach(v, PathEndMode.OnCell, danger) && 
-                            (!destVec.IsValid || pawn.Position.DistanceToSquared(v) >= pawn.Position.DistanceToSquared(destVec)) &&
-                            pawn.CanSee(targetPawn))
+                            !v.IsForbidden(pawn) && pawn.CanReach(v, PathEndMode.OnCell, danger) && pawn.CanSee(targetPawn) &&
+                            (!destVec.IsValid || pawn.Position.DistanceToSquared(v) >= pawn.Position.DistanceToSquared(destVec)))
                         {
                             destVec = v;
                         }
@@ -69,7 +68,7 @@ namespace DSFI.Toils
             return toil;
         }
 
-        public static Toil GotoNearTargetAndWait(TargetIndex target, float moveDistance, float lookDistance)
+        public static Toil GotoNearTargetAndWait(TargetIndex target, Danger danger, float moveDistance, float lookDistance)
         {
             Toil toil = new Toil();
             toil.defaultCompleteMode = ToilCompleteMode.Never;
@@ -104,10 +103,9 @@ namespace DSFI.Toils
                     foreach (IntVec3 t in GenRadial.RadialPatternInRadius(moveDistance))
                     {
                         IntVec3 v = targetPawn.Position + t;
-                        if (v.InBounds(map) && v.Walkable(map) && v != pawn.Position &&
-                            pawn.CanReach(v, PathEndMode.OnCell, Danger.Some) &&
-                            (!destVec.IsValid || pawn.Position.DistanceToSquared(v) >= pawn.Position.DistanceToSquared(destVec)) &&
-                            pawn.CanSee(targetPawn))
+                        if (v.InBounds(map) && v.Walkable(map) && v != pawn.Position && 
+                            !v.IsForbidden(pawn) && pawn.CanReach(v, PathEndMode.OnCell, danger) && pawn.CanSee(targetPawn) &&
+                            (!destVec.IsValid || pawn.Position.DistanceToSquared(v) >= pawn.Position.DistanceToSquared(destVec)))
                         {
                             destVec = v;
                         }

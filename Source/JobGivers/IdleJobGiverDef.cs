@@ -18,6 +18,11 @@ namespace DSFI
         public Type giverClass;
         public float probabilityWeight;
         public int usefulness;
+        public float searchDistance = 16f;
+
+        public WorkTags workTagsRequirement = WorkTags.None;
+        public List<WorkTypeDef> workTypeRequirement = new List<WorkTypeDef>();
+        public List<PawnCapacityDef> pawnCapacityRequirement = new List<PawnCapacityDef>();
     }
 
     public class IdleJobGiverDef_TakeNap : IdleJobGiverDef
@@ -27,22 +32,11 @@ namespace DSFI
 
     public class IdleJobGiverDef_WatchDoing : IdleJobGiverDef
     {
-        public float searchDistance;
         public JobDef jobDef;
         public Type targetJobDriver;
     }
 
-    public class IdleJobGiverDef_ObservingAnimal : IdleJobGiverDef
-    {
-        public float searchDistance;
-    }
-
     public class IdleJobGiverDef_LookAroundRoom : IdleJobGiverDef
-    {
-        public int requiredOpinion;
-    }
-
-    public class IdleJobGiverDef_Graffiti : IdleJobGiverDef
     {
         public int requiredOpinion;
     }

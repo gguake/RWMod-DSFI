@@ -22,6 +22,15 @@
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Build_dev|AnyCPU'">
+    <OutputPath>..\Mod\Assemblies\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
       <HintPath>..\..\..\..\Steam\steamapps\common\RimWorld\Mods\alienrace\Assemblies\0Harmony.dll</HintPath>
@@ -42,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AIUtility.cs" />
     <Compile Include="JobGivers\IdleJobGiver.cs" />
     <Compile Include="JobGivers\IdleJobGiverDef.cs" />
     <Compile Include="JobGivers\IdleJobGiver_Graffiti.cs" />

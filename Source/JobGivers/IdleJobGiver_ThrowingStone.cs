@@ -14,11 +14,6 @@ namespace DSFI.JobGivers
     {
         public override float GetWeight(Pawn pawn, Trait traitIndustriousness)
         {
-            if (!pawn.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation))
-            {
-                return 0f;
-            }
-
             float multiplier = 1f;
             if (pawn.story.traits.HasTrait(TraitDefOf.ShootingAccuracy))
             {
@@ -45,35 +40,22 @@ namespace DSFI.JobGivers
                 return null;
             }
 
-            IntVec3 position = IntVec3.Invalid;
-            
-            RCellFinder.TryFindRandomSpotJustOutsideColony(pawn.Position, pawn.Map, pawn, out position, (IntVec3 x) => pawn.CanReach(x, PathEndMode.Touch, Danger.None));
+            IntVec3 position = AIUtility.FindRandomSpotOutsideColony(pawn, def.searchDistance, canReach: false, canReserve: false);
             if (!position.IsValid)
             {
                 return null;
             }
 
             IntVec3 standPosition = IntVec3.Invalid;
-            (from x in GenRadial.RadialCellsAround(position, 4.0f, true)
-             where x.DistanceToSquared(position) > 9 &&
-                   GenSight.LineOfSight(position, x, pawn.Map) && 
-                   pawn.CanReserve(x)
-             select x).TryRandomElement(out standPosition);
-            if (standPosition == null)
+            if (!AIUtility.FindAroundSpotFromTarget(pawn, position, 4.0f, 3.0f, canSee: true, canReach: true, canReserve: true).TryRandomElement(out standPosition))
             {
                 return null;
             }
             
-
-            if (position.IsValid)
+            return new Job(IdleJobDefOf.IdleJob_ThrowingStone, position, standPosition)
             {
-                return new Job(IdleJobDefOf.IdleJob_ThrowingStone, position, standPosition)
-                {
-                    locomotionUrgency = LocomotionUrgency.Walk
-                };
-            }
-
-            return null;
+                locomotionUrgency = LocomotionUrgency.Walk
+            };
         }
     }
 }

@@ -23,7 +23,7 @@ namespace DSFI.Jobs
             float xp = 5f * Mathf.Pow(5f, target.RaceProps.wildness);
 
             this.FailOnDestroyedNullOrForbidden(TargetIndex.A);
-            yield return DSFIToils_Moving.GotoNearTarget(TargetIndex.A, Danger.Some, moveDistance, lookDistance);
+            yield return DSFIToils_Moving.GotoNearTarget(TargetIndex.A, Danger.None, moveDistance, lookDistance);
 
             Toil observing = Toils_General.Wait(1500);
             observing.FailOnDestroyedOrNull(TargetIndex.A);

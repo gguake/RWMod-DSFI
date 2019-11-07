@@ -61,13 +61,11 @@ namespace DSFI.JobGivers
                 Room room = pawn.ownership.OwnedRoom;
                 if (room != null)
                 {
-                    room.Cells.Where(x => x.Standable(pawn.Map) && !x.IsForbidden(pawn) && pawn.CanReserveAndReach(x, PathEndMode.OnCell, Danger.None)).TryRandomElement(out position);
+                    if (!room.Cells.Where(x => x.Standable(pawn.Map) && !x.IsForbidden(pawn) && pawn.CanReserveAndReach(x, PathEndMode.OnCell, Danger.None)).TryRandomElement(out position))
+                    {
+                        position = AIUtility.FindRandomSpotOutsideColony(pawn, canReach: true, canReserve: true);
+                    }
                 }
-            }
-
-            if (!position.IsValid)
-            {
-                RCellFinder.TryFindRandomSpotJustOutsideColony(pawn.Position, pawn.Map, pawn, out position, (IntVec3 x) => pawn.CanReserveAndReach(x, PathEndMode.OnCell, Danger.None));
             }
 
             if (position.IsValid)

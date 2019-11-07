@@ -7,9 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSFI", "DSFI.csproj", "{668
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Build_dev|Any CPU = Build_dev|Any CPU
 		Build|Any CPU = Build|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{668F75D1-B06C-4F07-BC9A-E5D40765BFA4}.Build_dev|Any CPU.ActiveCfg = Build_dev|Any CPU
+		{668F75D1-B06C-4F07-BC9A-E5D40765BFA4}.Build_dev|Any CPU.Build.0 = Build_dev|Any CPU
 		{668F75D1-B06C-4F07-BC9A-E5D40765BFA4}.Build|Any CPU.ActiveCfg = Build|Any CPU
 		{668F75D1-B06C-4F07-BC9A-E5D40765BFA4}.Build|Any CPU.Build.0 = Build|Any CPU
 	EndGlobalSection

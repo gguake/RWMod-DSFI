@@ -11,21 +11,6 @@ namespace DSFI.JobGivers
 {
     public class IdleJobGiver_MendItem : IdleJobGiver<IdleJobGiverDef>
     {
-        public override float GetWeight(Pawn pawn, Trait traitIndustriousness)
-        {
-            if (pawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Crafting))
-            {
-                return 0f;
-            }
-
-            if (!pawn.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation))
-            {
-                return 0f;
-            }
-
-            return base.GetWeight(pawn, traitIndustriousness);
-        }
-
         public override Job TryGiveJob(Pawn pawn)
         {
             Region region = pawn.GetRegion(RegionType.Set_Passable);

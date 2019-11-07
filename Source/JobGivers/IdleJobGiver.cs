@@ -24,6 +24,33 @@ namespace DSFI
         {
             if (this.def != null)
             {
+                if (pawn.story.WorkTagIsDisabled(this.def.workTagsRequirement))
+                {
+                    return 0f;
+                }
+
+                if (this.def.workTypeRequirement.Count > 0)
+                {
+                    foreach (var workTypeDef in this.def.workTypeRequirement)
+                    {
+                        if (pawn.story.WorkTypeIsDisabled(workTypeDef))
+                        {
+                            return 0f;
+                        }
+                    }
+                }
+
+                if (this.def.pawnCapacityRequirement.Count > 0)
+                {
+                    foreach (var pawnCapacityDef in this.def.pawnCapacityRequirement)
+                    {
+                        if (!pawn.health.capacities.CapableOf(pawnCapacityDef))
+                        {
+                            return 0f;
+                        }
+                    }
+                }
+
                 float bonusMultiplier = 1.0f;
                 if (traitIndustriousness != null && this.def.usefulness != 0)
                 {

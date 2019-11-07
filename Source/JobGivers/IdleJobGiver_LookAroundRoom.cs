@@ -57,10 +57,7 @@ namespace DSFI.JobGivers
                 IntVec3 position = IntVec3.Invalid;
 
                 Room room = owner.ownership.OwnedRoom;
-                room.Cells.Where(x => x.Standable(map) && !x.IsForbidden(pawn) &&
-                                pawn.CanReserveAndReach(x, PathEndMode.OnCell, Danger.None)).TryRandomElement(out position);
-
-                if (position.IsValid)
+                if (room.Cells.Where(x => x.Standable(map) && !x.IsForbidden(pawn) && pawn.CanReserveAndReach(x, PathEndMode.OnCell, Danger.None)).TryRandomElement(out position))
                 {
                     return new Job(IdleJobDefOf.IdleJob_LookAroundRoom, owner, position)
                     {

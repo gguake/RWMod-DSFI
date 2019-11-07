@@ -37,7 +37,6 @@ namespace DSFI.JobGivers
                         return false;
                     }
 
-
                     return true;
                 }) as Pawn;
 
