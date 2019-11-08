@@ -71,7 +71,7 @@ namespace DSFI.Jobs
                 }
             };
 
-            nap.tickAction = delegate ()
+            nap.tickAction = () =>
             {
                 pawn.GainComfortFromCellIfPossible();
 
@@ -140,7 +140,7 @@ namespace DSFI.Jobs
                 }
             };
 
-            nap.AddFinishAction(delegate
+            nap.AddFinishAction(() =>
             {
                 if (pawn.mindState.applyBedThoughtsOnLeave)
                 {

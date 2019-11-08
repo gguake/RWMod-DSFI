@@ -28,12 +28,12 @@ namespace DSFI.Jobs
             doWork.defaultCompleteMode = ToilCompleteMode.Never;
             doWork.FailOn(() => !JoyUtility.EnjoyableOutsideNow(this.pawn, null));
             doWork.FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
-            doWork.initAction = delegate ()
+            doWork.initAction = () =>
             {
                 this.workLeft = 1800f;
             };
 
-            doWork.tickAction = delegate ()
+            doWork.tickAction = () =>
             {
                 if (pawn.IsHashIntervalTick(20))
                 {
