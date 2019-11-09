@@ -21,6 +21,7 @@ namespace DSFI
         public static JobDef IdleJob_ThrowingStone;
         public static JobDef IdleJob_Graffiti;
         public static JobDef IdleJob_CleaningGun;
+        public static JobDef IdleJob_Gardening;
     }
 
     [DefOf]

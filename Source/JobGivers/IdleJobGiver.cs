@@ -28,30 +28,41 @@ namespace DSFI
                 {
                     return 0f;
                 }
-
-                if (this.def.workTypeRequirement.Count > 0)
+                
+                foreach (var workTypeDef in this.def.workTypeRequirement)
                 {
-                    foreach (var workTypeDef in this.def.workTypeRequirement)
+                    if (pawn.story.WorkTypeIsDisabled(workTypeDef))
                     {
-                        if (pawn.story.WorkTypeIsDisabled(workTypeDef))
-                        {
-                            return 0f;
-                        }
+                        return 0f;
                     }
                 }
-
-                if (this.def.pawnCapacityRequirement.Count > 0)
+                
+                foreach (var pawnCapacityDef in this.def.pawnCapacityRequirement)
                 {
-                    foreach (var pawnCapacityDef in this.def.pawnCapacityRequirement)
+                    if (!pawn.health.capacities.CapableOf(pawnCapacityDef))
                     {
-                        if (!pawn.health.capacities.CapableOf(pawnCapacityDef))
-                        {
-                            return 0f;
-                        }
+                        return 0f;
                     }
                 }
 
                 float bonusMultiplier = 1.0f;
+                foreach (var relatedSkill in this.def.relatedSkillPassion)
+                {
+                    SkillRecord skill = pawn.skills.GetSkill(relatedSkill);
+                    if (skill.TotallyDisabled)
+                    {
+                        return 0f;
+                    }
+                    else if (skill.passion == Passion.Major)
+                    {
+                        bonusMultiplier *= 1.5f;
+                    }
+                    else if (skill.passion == Passion.Minor)
+                    {
+                        bonusMultiplier *= 1.2f;
+                    }
+                }
+                
                 if (traitIndustriousness != null && this.def.usefulness != 0)
                 {
                     bonusMultiplier = (4.0f - Math.Abs(traitIndustriousness.Degree - this.def.usefulness)) / 2.0f;

@@ -10,7 +10,7 @@ using RimWorld;
 using DSFI.Toils;
 namespace DSFI.Jobs
 {
-    public class IdleJobDriver_MessingAround : JobDriver
+    public class IdleJobDriver_MessingAround : IdleJobDriver
     {
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {

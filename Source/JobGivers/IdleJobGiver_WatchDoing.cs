@@ -20,7 +20,7 @@ namespace DSFI.JobGivers
 
             if (pawn.story.traits.HasTrait(TraitDefOf.Kind))
             {
-                return base.GetWeight(pawn, traitIndustriousness) * 1.5f;
+                return base.GetWeight(pawn, traitIndustriousness) * 1.8f;
             }
 
             return base.GetWeight(pawn, traitIndustriousness);

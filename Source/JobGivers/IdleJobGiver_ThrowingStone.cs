@@ -19,17 +19,7 @@ namespace DSFI.JobGivers
             {
                 multiplier *= 1.5f;
             }
-
-            if (pawn.skills.GetSkill(SkillDefOf.Shooting).passion == Passion.Major)
-            {
-                multiplier *= 1.5f;
-            }
-
-            if (pawn.skills.GetSkill(SkillDefOf.Shooting).passion == Passion.Minor)
-            {
-                multiplier *= 1.2f;
-            }
-
+            
             return base.GetWeight(pawn, traitIndustriousness) * multiplier;
         }
         

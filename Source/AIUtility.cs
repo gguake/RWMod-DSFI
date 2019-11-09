@@ -84,5 +84,42 @@ namespace DSFI
                 return true;
             });
         }
+
+        public static IntVec3 FindRandomSpotInZone(Pawn pawn, Zone zone, bool canReach = false, bool canReserve = false)
+        {
+            IntVec3 position = IntVec3.Invalid;
+            if (zone.cells.Where((IntVec3 x) =>
+            {
+                if (!x.InBounds(pawn.Map) || !x.Walkable(pawn.Map))
+                {
+                    return false;
+                }
+
+                if (x.IsForbidden(pawn))
+                {
+                    return false;
+                }
+
+                if (canReach && !pawn.CanReach(x, PathEndMode.OnCell, Danger.None))
+                {
+                    return false;
+                }
+
+                if (canReserve && !pawn.CanReserve(x))
+                {
+                    return false;
+                }
+
+                return true;
+
+            }).TryRandomElement(out position))
+            {
+                return position;
+            }
+            else
+            {
+                return IntVec3.Invalid;
+            }
+        }
     }
 }

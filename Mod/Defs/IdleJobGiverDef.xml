@@ -118,18 +118,24 @@
 			<li>Consciousness</li>
 			<li>Manipulation</li>
 		</pawnCapacityRequirement>
+		<relatedSkillPassion>
+			<li>Melee</li>
+		</relatedSkillPassion>
 	</DSFI.IdleJobGiverDef>
 
 	<DSFI.IdleJobGiverDef>
 		<defName>IdleJobGiver_ThrowingStone</defName>
 		<giverClass>DSFI.JobGivers.IdleJobGiver_ThrowingStone</giverClass>
-        <probabilityWeight>6</probabilityWeight>
+        <probabilityWeight>5</probabilityWeight>
         <usefulness>-1</usefulness>
         <searchDistance>12</searchDistance>
 		<pawnCapacityRequirement>
 			<li>Consciousness</li>
 			<li>Manipulation</li>
 		</pawnCapacityRequirement>
+		<relatedSkillPassion>
+			<li>Shooting</li>
+		</relatedSkillPassion>
 	</DSFI.IdleJobGiverDef>
 
 <!--
@@ -156,5 +162,24 @@
 			<li>Consciousness</li>
 			<li>Manipulation</li>
 		</pawnCapacityRequirement>
+	</DSFI.IdleJobGiverDef>
+
+	<DSFI.IdleJobGiverDef>
+		<defName>IdleJobGiver_Gardening</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_Gardening</giverClass>
+        <probabilityWeight>60000</probabilityWeight>
+        <usefulness>2</usefulness>
+		<workTagsRequirement>
+			<li>PlantWork</li>
+		</workTagsRequirement>
+		<workTypeRequirement>
+			<li>Growing</li>
+		</workTypeRequirement>
+		<pawnCapacityRequirement>
+			<li>Consciousness</li>
+		</pawnCapacityRequirement>
+		<relatedSkillPassion>
+			<li>Plants</li>
+		</relatedSkillPassion>
 	</DSFI.IdleJobGiverDef>
 </Defs>

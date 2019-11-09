@@ -23,6 +23,7 @@ namespace DSFI
         public WorkTags workTagsRequirement = WorkTags.None;
         public List<WorkTypeDef> workTypeRequirement = new List<WorkTypeDef>();
         public List<PawnCapacityDef> pawnCapacityRequirement = new List<PawnCapacityDef>();
+        public List<SkillDef> relatedSkillPassion = new List<SkillDef>();
     }
 
     public class IdleJobGiverDef_TakeNap : IdleJobGiverDef

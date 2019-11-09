@@ -10,7 +10,7 @@ using RimWorld;
 using DSFI.Toils;
 namespace DSFI.Jobs
 {
-    public class IdleJobDriver_ObservingAnimal : JobDriver
+    public class IdleJobDriver_ObservingAnimal : IdleJobDriver
     {
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
@@ -25,8 +25,7 @@ namespace DSFI.Jobs
             this.FailOnDestroyedNullOrForbidden(TargetIndex.A);
             yield return DSFIToils_Moving.GotoNearTarget(TargetIndex.A, Danger.None, moveDistance, lookDistance);
 
-            Toil observing = Toils_General.Wait(1500);
-            observing.FailOnDestroyedOrNull(TargetIndex.A);
+            Toil observing = Toils_General.Wait(1500).FailOnDestroyedOrNull(TargetIndex.A);
             observing.socialMode = RandomSocialMode.SuperActive;
             observing.handlingFacing = true;
             observing.FailOn(() => !JoyUtility.EnjoyableOutsideNow(this.pawn, null) || this.pawn.Position.IsForbidden(this.pawn));

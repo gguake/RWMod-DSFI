@@ -78,4 +78,13 @@
 		<casualInterruptible>true</casualInterruptible>
 		<alwaysShowWeapon>true</alwaysShowWeapon>
 	</JobDef>
+
+	<DSFI.IdleJobDef>
+		<defName>IdleJob_Gardening</defName>
+		<driverClass>DSFI.Jobs.IdleJobDriver_Gardening</driverClass>
+		<reportString>watching crops in TargetA.</reportString>
+		<reportStringA>weeding around TargetA.</reportStringA>
+		<reportStringB>killing pests around TargetA.</reportStringB>
+		<casualInterruptible>true</casualInterruptible>
+	</DSFI.IdleJobDef>
 </Defs>

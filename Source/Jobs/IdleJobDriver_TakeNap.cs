@@ -9,7 +9,7 @@ using RimWorld;
 
 namespace DSFI.Jobs
 {
-    public class IdleJobDriver_TakeNap : JobDriver
+    public class IdleJobDriver_TakeNap : IdleJobDriver
     {
         public Building_Bed Bed
         {

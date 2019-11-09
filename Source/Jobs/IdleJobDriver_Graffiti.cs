@@ -9,7 +9,7 @@ using RimWorld;
 
 namespace DSFI.Jobs
 {
-    public class IdleJobDriver_Graffiti : JobDriver
+    public class IdleJobDriver_Graffiti : IdleJobDriver
     {
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {

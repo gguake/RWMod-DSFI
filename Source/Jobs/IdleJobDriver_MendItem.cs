@@ -9,7 +9,7 @@ using RimWorld;
 
 namespace DSFI.Jobs
 {
-    public class IdleJobDriver_MendItem : JobDriver
+    public class IdleJobDriver_MendItem : IdleJobDriver
     {
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
@@ -24,8 +24,7 @@ namespace DSFI.Jobs
             this.FailOnDestroyedNullOrForbidden(TargetIndex.A);
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
 
-            Toil mending = new Toil();
-            mending.FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
+            Toil mending = new Toil().FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
             mending.defaultCompleteMode = ToilCompleteMode.Never;
             mending.socialMode = RandomSocialMode.SuperActive;
             mending.WithProgressBar(TargetIndex.A, () => workDone / mendingWorks);

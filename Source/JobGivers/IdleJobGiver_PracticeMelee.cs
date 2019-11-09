@@ -14,16 +14,6 @@ namespace DSFI.JobGivers
     {
         public override float GetWeight(Pawn pawn, Trait traitIndustriousness)
         {
-            if (pawn.story.WorkTagIsDisabled(WorkTags.Violent))
-            {
-                return 0f;
-            }
-
-            if (!pawn.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation))
-            {
-                return 0f;
-            }
-
             float multiplier = 1f;
             if (pawn.story.traits.HasTrait(TraitDefOf.Brawler))
             {
@@ -31,16 +21,6 @@ namespace DSFI.JobGivers
             }
 
             if (pawn.story.traits.HasTrait(TraitDefOf.Bloodlust))
-            {
-                multiplier *= 1.2f;
-            }
-
-            if (pawn.skills.GetSkill(SkillDefOf.Melee).passion == Passion.Major)
-            {
-                multiplier *= 1.5f;
-            }
-
-            if (pawn.skills.GetSkill(SkillDefOf.Melee).passion == Passion.Minor)
             {
                 multiplier *= 1.2f;
             }

@@ -9,7 +9,7 @@ using RimWorld;
 
 namespace DSFI.Jobs
 {
-    public class IdleJobDriver_WatchDoing : JobDriver
+    public class IdleJobDriver_WatchDoing : IdleJobDriver
     {
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
@@ -41,8 +41,7 @@ namespace DSFI.Jobs
                 }
             }
 
-            Toil watching = new Toil();
-            watching.FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
+            Toil watching = new Toil().FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
             watching.defaultCompleteMode = ToilCompleteMode.Never;
             watching.socialMode = RandomSocialMode.SuperActive;
             watching.tickAction = () =>
@@ -64,11 +63,6 @@ namespace DSFI.Jobs
 
             yield return watching;
             yield break;
-        }
-
-        public override string GetReport()
-        {
-            return base.GetReport();
         }
         
         private const float xp = 10f;
