@@ -28,14 +28,17 @@ namespace DSFI.Jobs
             Toil throwing = Toils_General.Wait(2000, TargetIndex.A);
             throwing.socialMode = RandomSocialMode.Normal;
             throwing.FailOn(() => !JoyUtility.EnjoyableOutsideNow(this.pawn, null) || this.TargetB.Cell.IsForbidden(this.pawn));
+            throwing.handlingFacing = true;
+            throwing.initAction = () =>
+            {
+                pawn.rotationTracker.FaceCell(TargetLocA);
+            };
+
             throwing.tickAction = () =>
             {
                 if (this.pawn.IsHashIntervalTick(400))
                 {
                     pawn.skills.Learn(SkillDefOf.Shooting, 5f);
-                    throwing.handlingFacing = true;
-                    pawn.rotationTracker.FaceCell(TargetLocA);
-                    
                     MoteMaker.ThrowStone(pawn, TargetLocA);
                 }
             };
