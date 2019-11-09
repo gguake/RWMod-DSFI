@@ -167,7 +167,7 @@
 	<DSFI.IdleJobGiverDef>
 		<defName>IdleJobGiver_Gardening</defName>
 		<giverClass>DSFI.JobGivers.IdleJobGiver_Gardening</giverClass>
-        <probabilityWeight>60000</probabilityWeight>
+        <probabilityWeight>6</probabilityWeight>
         <usefulness>2</usefulness>
 		<workTagsRequirement>
 			<li>PlantWork</li>

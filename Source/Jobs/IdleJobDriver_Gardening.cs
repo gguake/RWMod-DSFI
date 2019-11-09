@@ -59,6 +59,7 @@ namespace DSFI.Jobs
             gardening.tickAction = () =>
             {
                 this.workDone++;
+                this.pawn.skills.Learn(SkillDefOf.Plants, 0.01f);
                 if (this.workDone >= workTotal)
                 {
                     this.ReadyForNextToil();
