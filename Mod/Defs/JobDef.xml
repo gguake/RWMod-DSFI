@@ -17,14 +17,14 @@
 	<JobDef>
 		<defName>IdleJob_WatchResearch</defName>
 		<driverClass>DSFI.Jobs.IdleJobDriver_WatchDoing</driverClass>
-		<reportString>watching TargetA do research.</reportString>
+		<reportString>watching TargetA has studying.</reportString>
 		<casualInterruptible>true</casualInterruptible>
 	</JobDef>
 
 	<JobDef>
 		<defName>IdleJob_WatchWorking</defName>
 		<driverClass>DSFI.Jobs.IdleJobDriver_WatchDoing</driverClass>
-		<reportString>watching TargetA working.</reportString>
+		<reportString>watching TargetA has working.</reportString>
 		<casualInterruptible>true</casualInterruptible>
 	</JobDef>
 
@@ -38,21 +38,21 @@
 	<JobDef>
 		<defName>IdleJob_MessingAround</defName>
 		<driverClass>DSFI.Jobs.IdleJobDriver_MessingAround</driverClass>
-		<reportString>just sitting idle.</reportString>
+		<reportString>sitting idle.</reportString>
 		<casualInterruptible>true</casualInterruptible>
 	</JobDef>
 
 	<JobDef>
 		<defName>IdleJob_LookAroundRoom</defName>
 		<driverClass>DSFI.Jobs.IdleJobDriver_LookAroundRoom</driverClass>
-		<reportString>poking around in TargetA's room.</reportString>
+		<reportString>looking around the TargetA's room.</reportString>
 		<casualInterruptible>true</casualInterruptible>
 	</JobDef>
 
 	<JobDef>
 		<defName>IdleJob_PracticeMelee</defName>
 		<driverClass>DSFI.Jobs.IdleJobDriver_PracticeMelee</driverClass>
-		<reportString>practicing with their TargetA.</reportString>
+		<reportString>have practice upon TargetA.</reportString>
 		<casualInterruptible>true</casualInterruptible>
 		<alwaysShowWeapon>true</alwaysShowWeapon>
 	</JobDef>
@@ -60,7 +60,7 @@
 	<JobDef>
 		<defName>IdleJob_ThrowingStone</defName>
 		<driverClass>DSFI.Jobs.IdleJobDriver_ThrowingStone</driverClass>
-		<reportString>throwing small stones.</reportString>
+		<reportString>throwing tiny stone.</reportString>
 		<casualInterruptible>true</casualInterruptible>
 	</JobDef>
 
@@ -74,8 +74,17 @@
 	<JobDef>
 		<defName>IdleJob_CleaningGun</defName>
 		<driverClass>DSFI.Jobs.IdleJobDriver_CleaningGun</driverClass>
-		<reportString>cleaning their TargetA.</reportString>
+		<reportString>cleaning TargetA.</reportString>
 		<casualInterruptible>true</casualInterruptible>
 		<alwaysShowWeapon>true</alwaysShowWeapon>
 	</JobDef>
+
+	<DSFI.IdleJobDef>
+		<defName>IdleJob_Gardening</defName>
+		<driverClass>DSFI.Jobs.IdleJobDriver_Gardening</driverClass>
+		<reportString>watching crops in TargetA.</reportString>
+		<reportStringA>weeding around TargetA.</reportStringA>
+		<reportStringB>killing pests around TargetA.</reportStringB>
+		<casualInterruptible>true</casualInterruptible>
+	</DSFI.IdleJobDef>
 </Defs>
