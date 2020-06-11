@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Reflection;
-using Harmony;
 using UnityEngine;
 using Verse;
 using Verse.AI;
@@ -22,9 +21,14 @@ namespace DSFI.Jobs
             return pawn.Reserve(target, job, 1, -1, null, errorOnFailed);
         }
 
-        private FieldInfo fieldJitterer = AccessTools.Field(typeof(Pawn_DrawTracker), "jitterer");
+        private FieldInfo fieldJitterer = null;
         protected override IEnumerable<Toil> MakeNewToils()
         {
+            if (fieldJitterer == null)
+            {
+                fieldJitterer = typeof(Pawn_DrawTracker).GetFields(BindingFlags.NonPublic | BindingFlags.Instance).First(x => x.Name == "jitterer");
+            }
+
             JitterHandler jitterer = fieldJitterer.GetValue(pawn.Drawer) as JitterHandler;
             yield return Toils_Goto.GotoCell(TargetIndex.B, PathEndMode.OnCell);
 

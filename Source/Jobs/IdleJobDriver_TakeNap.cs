@@ -122,7 +122,7 @@ namespace DSFI.Jobs
                     }
                 }
 
-                if (pawn.ownership != null && Bed != null && !Bed.Medical && !Bed.owners.Contains(pawn))
+                if (pawn.ownership != null && Bed != null && !Bed.Medical && !Bed.OwnersForReading.Contains(pawn))
                 {
                     if (pawn.Downed)
                     {

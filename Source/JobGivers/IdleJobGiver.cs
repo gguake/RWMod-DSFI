@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using Harmony;
 using UnityEngine;
 using Verse;
 using Verse.AI;
@@ -24,14 +23,14 @@ namespace DSFI
         {
             if (this.def != null)
             {
-                if (pawn.story.WorkTagIsDisabled(this.def.workTagsRequirement))
+                if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & this.def.workTagsRequirement) != 0)
                 {
                     return 0f;
                 }
                 
                 foreach (var workTypeDef in this.def.workTypeRequirement)
                 {
-                    if (pawn.story.WorkTypeIsDisabled(workTypeDef))
+                    if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & workTypeDef.workTags) != 0)
                     {
                         return 0f;
                     }
