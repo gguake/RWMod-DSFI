@@ -38,7 +38,7 @@ namespace DSFI.Jobs
                     pawn.skills.Learn(SkillDefOf.Artistic, 0.5f);
                 }
 
-                this.workLeft -= doWork.actor.GetStatValue(StatDefOf.ConstructionSpeed, true);
+                this.workLeft -= doWork.actor.GetStatValue(StatDefOf.WorkSpeedGlobal, true);
                 if (this.workLeft <= 0f)
                 {
                     Thing thing = ThingMaker.MakeThing(DSFIThingDefOf.DSFI_Scribbling, null);
