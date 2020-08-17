@@ -25,7 +25,7 @@ namespace DSFI.JobGivers
                 {
                     return new Job(IdleJobDefOf.IdleJob_MessingAround, building)
                     {
-                        locomotionUrgency = LocomotionUrgency.Walk
+                        locomotionUrgency = modSettings.wanderMovePolicy
                     };
                 }
             }

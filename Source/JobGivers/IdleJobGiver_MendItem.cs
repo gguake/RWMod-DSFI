@@ -59,7 +59,7 @@ namespace DSFI.JobGivers
                 var target = targets.RandomElement();
                 return new Job(IdleJobDefOf.IdleJob_MendItem, target)
                 {
-                    locomotionUrgency = LocomotionUrgency.Walk
+                    locomotionUrgency = modSettings.wanderMovePolicy
                 };
             }
 

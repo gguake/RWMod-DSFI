@@ -42,7 +42,7 @@ namespace DSFI.JobGivers
                 Pawn target = pawns.RandomElement();
                 return new Job(IdleJobDefOf.IdleJob_ObservingAnimal, target)
                 {
-                    locomotionUrgency = LocomotionUrgency.Walk
+                    locomotionUrgency = modSettings.wanderMovePolicy
                 };
             }
 

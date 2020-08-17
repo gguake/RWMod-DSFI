@@ -2,4 +2,9 @@
 <LanguageData>
   <DSFI_ConfigWanderMultiplier>방황 계수</DSFI_ConfigWanderMultiplier>
   <DSFI_TT_ConfigWanderMultiplier>정착민이 이 모드의 다른 일을 하는대신 방황을 할 가능성에 대한 계수값입니다. 낮을수록 방황을 덜 합니다.</DSFI_TT_ConfigWanderMultiplier>
+  
+  <DSFI_ConfigWanderMovePolicy>방황시 이동 방식</DSFI_ConfigWanderMovePolicy>
+  <DSFI_ConfigWanderMovePolicy_Walk>걷기</DSFI_ConfigWanderMovePolicy_Walk>
+  <DSFI_ConfigWanderMovePolicy_Run>뛰기</DSFI_ConfigWanderMovePolicy_Run>
+
 </LanguageData>

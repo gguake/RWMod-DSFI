@@ -81,6 +81,8 @@ namespace DSFI
         }
 
         protected T def;
+
+        protected DSFISettings modSettings = LoadedModManager.GetMod<DSFIMod>().GetSettings<DSFISettings>();
     }
 
     public abstract class IdleJobGiverDefaultDef : IdleJobGiver<IdleJobGiverDef> { }

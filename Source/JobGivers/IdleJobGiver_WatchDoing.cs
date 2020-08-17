@@ -44,7 +44,7 @@ namespace DSFI.JobGivers
             {
                 return new Job(this.def.jobDef, targetPawn)
                 {
-                    locomotionUrgency = LocomotionUrgency.Walk
+                    locomotionUrgency = modSettings.wanderMovePolicy
                 };
             }
 

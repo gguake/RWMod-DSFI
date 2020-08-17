@@ -20,7 +20,5 @@ namespace DSFI.JobGivers
         {
             return null;
         }
-
-        private DSFISettings modSettings = LoadedModManager.GetMod<DSFIMod>().GetSettings<DSFISettings>();
     }
 }

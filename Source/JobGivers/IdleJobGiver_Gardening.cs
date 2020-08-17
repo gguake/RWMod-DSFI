@@ -51,7 +51,7 @@ namespace DSFI.JobGivers
             {
                 return new Job(IdleJobDefOf.IdleJob_Gardening, position)
                 {
-                    locomotionUrgency = LocomotionUrgency.Walk
+                    locomotionUrgency = modSettings.wanderMovePolicy
                 };
             }
             else

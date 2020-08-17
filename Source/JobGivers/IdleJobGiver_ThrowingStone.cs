@@ -44,7 +44,7 @@ namespace DSFI.JobGivers
             
             return new Job(IdleJobDefOf.IdleJob_ThrowingStone, position, standPosition)
             {
-                locomotionUrgency = LocomotionUrgency.Walk
+                locomotionUrgency = modSettings.wanderMovePolicy
             };
         }
     }

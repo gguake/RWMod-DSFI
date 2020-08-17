@@ -61,7 +61,7 @@ namespace DSFI.JobGivers
                 {
                     return new Job(IdleJobDefOf.IdleJob_LookAroundRoom, owner, position)
                     {
-                        locomotionUrgency = LocomotionUrgency.Walk
+                        locomotionUrgency = modSettings.wanderMovePolicy
                     };
                 }
             }

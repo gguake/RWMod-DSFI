@@ -44,7 +44,7 @@ namespace DSFI.JobGivers
             {
                 return new Job(IdleJobDefOf.IdleJob_Graffiti, position)
                 {
-                    locomotionUrgency = LocomotionUrgency.Walk
+                    locomotionUrgency = modSettings.wanderMovePolicy
                 };
             }
             

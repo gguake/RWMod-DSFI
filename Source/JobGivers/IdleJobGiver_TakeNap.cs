@@ -40,7 +40,7 @@ namespace DSFI.JobGivers
             {
                 return new Job(IdleJobDefOf.IdleJob_TakeNap, bed)
                 {
-                    locomotionUrgency = LocomotionUrgency.Walk
+                    locomotionUrgency = modSettings.wanderMovePolicy
                 };
             }
 

@@ -31,7 +31,7 @@ namespace DSFI.JobGivers
 
             return new Job(IdleJobDefOf.IdleJob_CleaningGun, weapon)
             {
-                locomotionUrgency = LocomotionUrgency.Walk
+                locomotionUrgency = modSettings.wanderMovePolicy
             };
         }
     }

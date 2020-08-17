@@ -52,7 +52,7 @@ namespace DSFI.JobGivers
             {
                 return new Job(IdleJobDefOf.IdleJob_PracticeMelee, pawn.equipment.Primary, position)
                 {
-                    locomotionUrgency = LocomotionUrgency.Walk
+                    locomotionUrgency = modSettings.wanderMovePolicy
                 };
             }
 
