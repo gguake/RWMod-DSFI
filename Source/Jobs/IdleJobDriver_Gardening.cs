@@ -104,9 +104,9 @@ namespace DSFI.Jobs
         }
 
         private int plantCount = 0;
-        private int plantWant = Rand.RangeInclusive(5, 8);
+        private int plantWant = Rand.RangeInclusive(3, 5);
         private int workDone = 0;
-        private const int workTotal = 600;
+        private const int workTotal = 500;
 
         private List<IntVec3> listChecked = new List<IntVec3>();
     }
