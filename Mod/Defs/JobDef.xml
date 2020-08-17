@@ -87,4 +87,13 @@
 		<reportStringB>killing pests around TargetA.</reportStringB>
 		<casualInterruptible>true</casualInterruptible>
 	</DSFI.IdleJobDef>
+	
+	<JobDef>
+		<defName>IdleJob_Thinking</defName>
+		<driverClass>DSFI.Jobs.IdleJobDriver_Thinking</driverClass>
+		<reportString>thinking about happened with TargetA.</reportString>
+		<casualInterruptible>true</casualInterruptible>
+		<joyDuration>1500</joyDuration>
+		<joyKind>Meditative</joyKind>
+	</JobDef>
 </Defs>

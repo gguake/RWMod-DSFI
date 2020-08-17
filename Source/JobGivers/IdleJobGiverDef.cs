@@ -40,4 +40,9 @@ namespace DSFI
     {
         public int requiredOpinion;
     }
+
+    public class IdleJobGiverDef_Thinking : IdleJobGiverDef
+    {
+        public int requiredOpinion;
+    }
 }

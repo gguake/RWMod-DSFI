@@ -35,6 +35,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>F:\Steam\steamapps\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>F:\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
@@ -52,12 +56,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AIUtility.cs" />
-    <Compile Include="IdleJobDef.cs" />
+    <Compile Include="PortraitIcon\PortraitIconCameraManager.cs" />
+    <Compile Include="PortraitIcon\PortraitIconMaterialCache.cs" />
+    <Compile Include="PortraitIcon\PortraitIconRenderer.cs" />
+    <Compile Include="RTMoteBubble.cs" />
+    <Compile Include="Jobs\IdleJobDef.cs" />
     <Compile Include="JobGivers\IdleJobGiver.cs" />
     <Compile Include="JobGivers\IdleJobGiverDef.cs" />
     <Compile Include="JobGivers\IdleJobGiver_Gardening.cs" />
     <Compile Include="JobGivers\IdleJobGiver_Graffiti.cs" />
     <Compile Include="JobGivers\IdleJobGiver_CleaningGun.cs" />
+    <Compile Include="JobGivers\IdleJobGiver_Thinking.cs" />
     <Compile Include="JobGivers\IdleJobGiver_ThrowingStone.cs" />
     <Compile Include="JobGivers\IdleJobGiver_PracticeMelee.cs" />
     <Compile Include="JobGivers\IdleJobGiver_MendItem.cs" />
@@ -72,6 +81,7 @@
     <Compile Include="Jobs\IdleJobDriver_Gardening.cs" />
     <Compile Include="Jobs\IdleJobDriver_Graffiti.cs" />
     <Compile Include="Jobs\IdleJobDriver_CleaningGun.cs" />
+    <Compile Include="Jobs\IdleJobDriver_Thinking.cs" />
     <Compile Include="Jobs\IdleJobDriver_ThrowingStone.cs" />
     <Compile Include="Jobs\IdleJobDriver_PracticeMelee.cs" />
     <Compile Include="Jobs\IdleJobDriver_LookAroundRoom.cs" />

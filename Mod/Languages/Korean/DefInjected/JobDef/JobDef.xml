@@ -14,4 +14,5 @@
   <IdleJob_Gardening.reportString>TargetA의 작물을 보러가는 중.</IdleJob_Gardening.reportString>
   <IdleJob_Gardening.reportStringA>TargetA 주변의 잡초를 뽑는 중.</IdleJob_Gardening.reportStringA>
   <IdleJob_Gardening.reportStringB>TargetA 주변의 벌레를 잡는 중.</IdleJob_Gardening.reportStringB>
+  <IdleJob_Thinking.reportString>TargetA와 있었던 일을 생각하는 중.</IdleJob_Thinking.reportString>
 </LanguageData>

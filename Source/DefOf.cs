@@ -22,6 +22,7 @@ namespace DSFI
         public static JobDef IdleJob_Graffiti;
         public static JobDef IdleJob_CleaningGun;
         public static JobDef IdleJob_Gardening;
+        public static JobDef IdleJob_Thinking;
     }
 
     [DefOf]
@@ -29,4 +30,11 @@ namespace DSFI
     {
         public static TraitDef QuickSleeper;
     }
+
+    [DefOf]
+    public static class MoteDefOf
+    {
+        public static ThingDef DSFI_Mote_Thought;
+    }
+
 }
