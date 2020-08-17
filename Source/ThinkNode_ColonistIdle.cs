@@ -26,6 +26,16 @@ namespace DSFI
             Lord lord = pawn.GetLord();
             if (lord == null)
             {
+                if (!pawn.Awake())
+                {
+                    return wanderJobGiver.TryIssueJobPackage(pawn, new JobIssueParams());
+                }
+
+                if (pawn.needs.food.Starving)
+                {
+                    return wanderJobGiver.TryIssueJobPackage(pawn, new JobIssueParams());
+                }
+
                 IdleJobGiverBase jobGiver = null;
                 this.JobGivers.TryRandomElementByWeight((IdleJobGiverBase x) => x.GetWeight(pawn, pawn.story.traits.GetTrait(TraitDefOf.Industriousness)), out jobGiver);
                 if (jobGiver != null)
