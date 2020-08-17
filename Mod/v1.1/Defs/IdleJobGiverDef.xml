@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<DSFI.IdleJobGiverDef>
+		<defName>IdleJobGiver_Wander</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_Wander</giverClass>
+        <probabilityWeight>150</probabilityWeight>
+        <usefulness>0</usefulness>
+	</DSFI.IdleJobGiverDef>
+
+	<DSFI.IdleJobGiverDef_TakeNap>
+		<defName>IdleJobGiver_TakeNap</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_TakeNap</giverClass>
+        <probabilityWeight>20</probabilityWeight>
+        <usefulness>-2</usefulness>
+
+		<!-- custom properties -->
+        <restRequirement>0.75</restRequirement>
+	</DSFI.IdleJobGiverDef_TakeNap>
+
+	<DSFI.IdleJobGiverDef>
+		<defName>IdleJobGiver_MendItem</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_MendItem</giverClass>
+        <probabilityWeight>2</probabilityWeight>
+        <usefulness>2</usefulness>
+		<workTagsRequirement>
+			<li>Crafting</li>
+		</workTagsRequirement>
+		<workTypeRequirement>
+			<li>Crafting</li>
+		</workTypeRequirement>
+		<pawnCapacityRequirement>
+			<li>Consciousness</li>
+			<li>Manipulation</li>
+		</pawnCapacityRequirement>
+	</DSFI.IdleJobGiverDef>
+
+	<DSFI.IdleJobGiverDef_WatchDoing>
+		<defName>IdleJobGiver_WatchResearch</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_WatchDoing</giverClass>
+        <probabilityWeight>5</probabilityWeight>
+        <usefulness>-1</usefulness>
+		<pawnCapacityRequirement>
+			<li>Consciousness</li>
+			<li>Manipulation</li>
+		</pawnCapacityRequirement>
+
+		<!-- custom properties -->
+        <searchDistance>10</searchDistance>
+        <jobDef>IdleJob_WatchResearch</jobDef>
+        <targetJobDriver>JobDriver_Research</targetJobDriver>
+	</DSFI.IdleJobGiverDef_WatchDoing>
+
+	<DSFI.IdleJobGiverDef_WatchDoing>
+		<defName>IdleJobGiver_WatchWorking</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_WatchDoing</giverClass>
+        <probabilityWeight>5</probabilityWeight>
+        <usefulness>-1</usefulness>
+		<pawnCapacityRequirement>
+			<li>Consciousness</li>
+			<li>Manipulation</li>
+		</pawnCapacityRequirement>
+
+		<!-- custom properties -->
+        <searchDistance>10</searchDistance>
+        <jobDef>IdleJob_WatchWorking</jobDef>
+        <targetJobDriver>JobDriver_DoBill</targetJobDriver>
+	</DSFI.IdleJobGiverDef_WatchDoing>
+
+	<DSFI.IdleJobGiverDef>
+		<defName>IdleJobGiver_ObservingAnimal</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_ObservingAnimal</giverClass>
+        <probabilityWeight>7</probabilityWeight>
+        <usefulness>-1</usefulness>
+        <searchDistance>16</searchDistance>
+		<workTagsRequirement>
+			<li>Animals</li>
+		</workTagsRequirement>
+		<workTypeRequirement>
+			<li>Handling</li>
+		</workTypeRequirement>
+		<pawnCapacityRequirement>
+			<li>Consciousness</li>
+			<li>Moving</li>
+		</pawnCapacityRequirement>
+	</DSFI.IdleJobGiverDef>
+
+	<DSFI.IdleJobGiverDef>
+		<defName>IdleJobGiver_MessingAround</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_MessingAround</giverClass>
+        <probabilityWeight>4</probabilityWeight>
+        <usefulness>-2</usefulness>
+	</DSFI.IdleJobGiverDef>
+
+	<DSFI.IdleJobGiverDef_LookAroundRoom>
+		<defName>IdleJobGiver_LookAroundRoom</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_LookAroundRoom</giverClass>
+        <probabilityWeight>4</probabilityWeight>
+        <usefulness>-2</usefulness>
+		<pawnCapacityRequirement>
+			<li>Consciousness</li>
+			<li>Moving</li>
+			<li>Sight</li>
+		</pawnCapacityRequirement>
+
+		<!-- custom properties -->
+        <requiredOpinion>70</requiredOpinion>
+	</DSFI.IdleJobGiverDef_LookAroundRoom>
+
+	<DSFI.IdleJobGiverDef>
+		<defName>IdleJobGiver_PracticeMelee</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_PracticeMelee</giverClass>
+        <probabilityWeight>7</probabilityWeight>
+        <usefulness>1</usefulness>
+		<workTagsRequirement>
+			<li>Violent</li>
+		</workTagsRequirement>
+		<pawnCapacityRequirement>
+			<li>Consciousness</li>
+			<li>Manipulation</li>
+		</pawnCapacityRequirement>
+		<relatedSkillPassion>
+			<li>Melee</li>
+		</relatedSkillPassion>
+	</DSFI.IdleJobGiverDef>
+
+	<DSFI.IdleJobGiverDef>
+		<defName>IdleJobGiver_ThrowingStone</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_ThrowingStone</giverClass>
+        <probabilityWeight>5</probabilityWeight>
+        <usefulness>-1</usefulness>
+        <searchDistance>12</searchDistance>
+		<pawnCapacityRequirement>
+			<li>Consciousness</li>
+			<li>Manipulation</li>
+		</pawnCapacityRequirement>
+		<relatedSkillPassion>
+			<li>Shooting</li>
+		</relatedSkillPassion>
+	</DSFI.IdleJobGiverDef>
+
+<!--
+	<DSFI.IdleJobGiverDef>
+		<defName>IdleJobGiver_Graffiti</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_Graffiti</giverClass>
+        <probabilityWeight>6</probabilityWeight>
+        <usefulness>-1</usefulness>
+	</DSFI.IdleJobGiverDef>
+-->
+
+	<DSFI.IdleJobGiverDef>
+		<defName>IdleJobGiver_CleaningGun</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_CleaningGun</giverClass>
+        <probabilityWeight>1</probabilityWeight>
+        <usefulness>1</usefulness>
+		<workTagsRequirement>
+			<li>Crafting</li>
+		</workTagsRequirement>
+		<workTypeRequirement>
+			<li>Crafting</li>
+		</workTypeRequirement>
+		<pawnCapacityRequirement>
+			<li>Consciousness</li>
+			<li>Manipulation</li>
+		</pawnCapacityRequirement>
+	</DSFI.IdleJobGiverDef>
+
+	<DSFI.IdleJobGiverDef>
+		<defName>IdleJobGiver_Gardening</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_Gardening</giverClass>
+        <probabilityWeight>6</probabilityWeight>
+        <usefulness>2</usefulness>
+		<workTagsRequirement>
+			<li>PlantWork</li>
+		</workTagsRequirement>
+		<workTypeRequirement>
+			<li>Growing</li>
+		</workTypeRequirement>
+		<pawnCapacityRequirement>
+			<li>Consciousness</li>
+		</pawnCapacityRequirement>
+		<relatedSkillPassion>
+			<li>Plants</li>
+		</relatedSkillPassion>
+	</DSFI.IdleJobGiverDef>
+</Defs>
