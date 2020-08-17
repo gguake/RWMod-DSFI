@@ -37,4 +37,9 @@ namespace DSFI
         public static ThingDef DSFI_Mote_Thought;
     }
 
+    [DefOf]
+    public static class DSFIThingDefOf
+    {
+        public static ThingDef DSFI_Scribbling;
+    }
 }

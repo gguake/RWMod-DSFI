@@ -13,10 +13,7 @@ namespace DSFI.Jobs
     {
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-            Pawn pawn = this.pawn;
-            LocalTargetInfo target = this.job.GetTarget(TargetIndex.A);
-            Job job = this.job;
-            return pawn.Reserve(target, job, 1, -1, null, errorOnFailed);
+            return pawn.Reserve(job.GetTarget(TargetIndex.A), job, 1, -1, null, errorOnFailed);
         }
 
         protected override IEnumerable<Toil> MakeNewToils()
@@ -28,24 +25,26 @@ namespace DSFI.Jobs
             doWork.defaultCompleteMode = ToilCompleteMode.Never;
             doWork.FailOn(() => !JoyUtility.EnjoyableOutsideNow(this.pawn, null));
             doWork.FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
+            doWork.PlaySustainerOrSound(SoundDefOf.Interact_CleanFilth);
             doWork.initAction = () =>
             {
-                this.workLeft = 1800f;
+                this.workLeft = 600f;
             };
 
             doWork.tickAction = () =>
             {
-                if (pawn.IsHashIntervalTick(20))
+                if (pawn.IsHashIntervalTick(50))
                 {
-                    pawn.skills.Learn(SkillDefOf.Artistic, 5f);
+                    pawn.skills.Learn(SkillDefOf.Artistic, 0.5f);
                 }
 
                 this.workLeft -= doWork.actor.GetStatValue(StatDefOf.ConstructionSpeed, true);
                 if (this.workLeft <= 0f)
                 {
-                    Thing thing = ThingMaker.MakeThing(ThingDefOf.Snowman, null);
-                    thing.SetFaction(this.pawn.Faction, null);
-                    GenSpawn.Spawn(thing, this.TargetLocA, this.Map, WipeMode.Vanish);
+                    Thing thing = ThingMaker.MakeThing(DSFIThingDefOf.DSFI_Scribbling, null);
+                    Thing spawnedThing = GenSpawn.Spawn(thing, this.TargetLocA, this.Map, WipeMode.Vanish);
+                    spawnedThing.Rotation = Rot4.Random;
+
                     this.ReadyForNextToil();
                     return;
                 }

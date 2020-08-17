@@ -56,6 +56,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AIUtility.cs" />
+    <Compile Include="CompGraffitiDecay.cs" />
+    <Compile Include="Graphic_Scribbling.cs" />
     <Compile Include="PortraitIcon\PortraitIconCameraManager.cs" />
     <Compile Include="PortraitIcon\PortraitIconMaterialCache.cs" />
     <Compile Include="PortraitIcon\PortraitIconRenderer.cs" />

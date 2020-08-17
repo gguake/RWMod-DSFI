@@ -138,14 +138,19 @@
 		</relatedSkillPassion>
 	</DSFI.IdleJobGiverDef>
 
-<!--
 	<DSFI.IdleJobGiverDef>
 		<defName>IdleJobGiver_Graffiti</defName>
 		<giverClass>DSFI.JobGivers.IdleJobGiver_Graffiti</giverClass>
-        <probabilityWeight>6</probabilityWeight>
+        <probabilityWeight>8</probabilityWeight>
         <usefulness>-1</usefulness>
+		<pawnCapacityRequirement>
+			<li>Consciousness</li>
+			<li>Manipulation</li>
+		</pawnCapacityRequirement>
+		<relatedSkillPassion>
+			<li>Artistic</li>
+		</relatedSkillPassion>
 	</DSFI.IdleJobGiverDef>
--->
 
 	<DSFI.IdleJobGiverDef>
 		<defName>IdleJobGiver_CleaningGun</defName>

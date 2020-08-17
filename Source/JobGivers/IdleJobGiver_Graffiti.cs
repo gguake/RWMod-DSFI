@@ -32,12 +32,23 @@ namespace DSFI.JobGivers
             RCellFinder.TryFindRandomSpotJustOutsideColony(pawn.Position, pawn.Map, pawn, out position, (IntVec3 x) =>
             {
                 TerrainDef terrainDef = x.GetTerrain(pawn.Map);
-                if (terrainDef.fertility > 0 && pawn.CanReserveAndReach(x, PathEndMode.Touch, Danger.None))
+                if (terrainDef.fertility <= 0)
                 {
-                    return true;
+                    return false;
                 }
 
-                return false;
+                int distSq = x.DistanceToSquared(pawn.Position);
+                if (distSq < 9 && distSq > 225)
+                {
+                    return false;
+                }
+                
+                if(!pawn.CanReserveAndReach(x, PathEndMode.Touch, Danger.None))
+                {
+                    return false;
+                }
+
+                return true;
             });
 
             if (position.IsValid)
