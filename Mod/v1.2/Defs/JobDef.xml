@@ -67,7 +67,7 @@
 	<JobDef>
 		<defName>IdleJob_Graffiti</defName>
 		<driverClass>DSFI.Jobs.IdleJobDriver_Graffiti</driverClass>
-		<reportString>has scribbling on ground.</reportString>
+		<reportString>has scribbling on the ground.</reportString>
 		<casualInterruptible>true</casualInterruptible>
 	</JobDef>
 
