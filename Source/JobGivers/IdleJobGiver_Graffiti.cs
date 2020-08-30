@@ -29,8 +29,19 @@ namespace DSFI.JobGivers
             }
 
             IntVec3 position = IntVec3.Invalid;
+
             RCellFinder.TryFindRandomSpotJustOutsideColony(pawn.Position, pawn.Map, pawn, out position, (IntVec3 x) =>
             {
+                if (!x.InBounds(pawn.Map) || !x.Walkable(pawn.Map))
+                {
+                    return false;
+                }
+
+                if (x.IsForbidden(pawn))
+                {
+                    return false;
+                }
+
                 TerrainDef terrainDef = x.GetTerrain(pawn.Map);
                 if (terrainDef.fertility <= 0)
                 {

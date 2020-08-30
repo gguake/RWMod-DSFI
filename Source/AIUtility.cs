@@ -26,7 +26,7 @@ namespace DSFI
                     return false;
                 }
 
-                if (distance > 0f && x.DistanceTo(pawn.Position) > distance * distance)
+                if (distance > 0f && x.DistanceToSquared(pawn.Position) > distance * distance)
                 {
                     return false;
                 }
