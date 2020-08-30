@@ -138,14 +138,19 @@
 		</relatedSkillPassion>
 	</DSFI.IdleJobGiverDef>
 
-<!--
 	<DSFI.IdleJobGiverDef>
 		<defName>IdleJobGiver_Graffiti</defName>
 		<giverClass>DSFI.JobGivers.IdleJobGiver_Graffiti</giverClass>
-        <probabilityWeight>6</probabilityWeight>
+        <probabilityWeight>8</probabilityWeight>
         <usefulness>-1</usefulness>
+		<pawnCapacityRequirement>
+			<li>Consciousness</li>
+			<li>Manipulation</li>
+		</pawnCapacityRequirement>
+		<relatedSkillPassion>
+			<li>Artistic</li>
+		</relatedSkillPassion>
 	</DSFI.IdleJobGiverDef>
--->
 
 	<DSFI.IdleJobGiverDef>
 		<defName>IdleJobGiver_CleaningGun</defName>
@@ -182,4 +187,12 @@
 			<li>Plants</li>
 		</relatedSkillPassion>
 	</DSFI.IdleJobGiverDef>
+
+	<DSFI.IdleJobGiverDef_Thinking>
+		<defName>IdleJobGiver_Thinking</defName>
+		<giverClass>DSFI.JobGivers.IdleJobGiver_Thinking</giverClass>
+        <probabilityWeight>10</probabilityWeight>
+        <usefulness>-2</usefulness>
+		<requiredOpinion>75</requiredOpinion>
+	</DSFI.IdleJobGiverDef_Thinking>
 </Defs>
