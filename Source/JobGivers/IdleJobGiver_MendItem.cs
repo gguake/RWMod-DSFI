@@ -45,7 +45,7 @@ namespace DSFI.JobGivers
                         continue;
                     }
                     
-                    if (!apparel.def.stuffCategories.Any(x => x.defName == "Fabric" || x.defName == "Leathery"))
+                    if (apparel.def.stuffCategories == null || !apparel.def.stuffCategories.Any(x => x.defName == "Fabric" || x.defName == "Leathery"))
                     {
                         continue;
                     }
