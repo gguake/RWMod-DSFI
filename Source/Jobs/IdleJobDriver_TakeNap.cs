@@ -113,12 +113,12 @@ namespace DSFI.Jobs
                 {
                     if (this.asleep)
                     {
-                        MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, ThingDefOf.Mote_SleepZ);
+                        FleckMaker.ThrowMetaIcon(pawn.Position, pawn.Map, FleckDefOf.SleepZ);
                     }
 
                     if (pawn.health.hediffSet.GetNaturallyHealingInjuredParts().Any<BodyPartRecord>())
                     {
-                        MoteMaker.ThrowMetaIcon(pawn.Position, pawn.Map, ThingDefOf.Mote_HealingCross);
+                        FleckMaker.ThrowMetaIcon(pawn.Position, pawn.Map, FleckDefOf.HealingCross);
                     }
                 }
 

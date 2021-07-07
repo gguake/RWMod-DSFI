@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef>
+    <defName>DSFI_Scribbling</defName>
+    <thingClass>ThingWithComps</thingClass>
+    <label>scribbling</label>
+    <description>just scribbling.</description>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <passability>Standable</passability>
+    <statBases>
+      <MaxHitPoints>30</MaxHitPoints>
+      <WorkToBuild>600</WorkToBuild>
+      <MarketValue>0</MarketValue>
+    </statBases>
+    <graphicData>
+      <graphicClass>DSFI.Graphic_Scribbling</graphicClass>
+      <texPath>Things/Scribblings</texPath>
+    </graphicData>
+    <comps>
+      <li>
+        <compClass>DSFI.CompGraffitiDecay</compClass>
+      </li>
+    </comps>
+    <soundImpactDefault>BulletImpact_Ground</soundImpactDefault>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>true</rotatable>
+    <selectable>false</selectable>
+    <tickerType>Rare</tickerType>
+    <drawerType>MapMeshOnly</drawerType>
+    <drawDamagedOverlay>false</drawDamagedOverlay>
+    <forceDebugSpawnable>true</forceDebugSpawnable>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <filthLeaving></filthLeaving>
+  </ThingDef>
+</Defs>

@@ -14,32 +14,19 @@ namespace DSFI.JobGivers
     {
         public override Job TryGiveJob(Pawn pawn)
         {
-            if (!MeditationUtility.CanMeditateNow(pawn))
+            if (pawn.ownership == null)
             {
                 return null;
             }
 
-            var spotCandidates = MeditationUtility.AllMeditationSpotCandidates(pawn).Where(delegate (LocalTargetInfo targetInfo)
+            if (pawn.ownership.OwnedRoom == null)
             {
-                if (!MeditationUtility.SafeEnvironmentalConditions(pawn, targetInfo.Cell, pawn.Map))
-                {
-                    return false;
-                }
+                return null;
+            }
 
-                if (!targetInfo.Cell.Standable(pawn.Map))
-                {
-                    return false;
-                }
+            Room room = pawn.ownership.OwnedRoom;
 
-                Room room = targetInfo.Cell.GetRoom(pawn.Map);
-                if (room != null && !room.Owners.Contains(pawn))
-                {
-                    return false;
-                }
-
-                return true;
-
-            });
+            var spotCandidates = room.Cells.Where(c => c.Standable(pawn.Map) && !c.IsForbidden(pawn) && pawn.CanReserveAndReach(c, PathEndMode.OnCell, Danger.None));
 
             LocalTargetInfo destination = LocalTargetInfo.Invalid;
             if (spotCandidates.Count() > 0)

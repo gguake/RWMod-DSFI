@@ -39,7 +39,7 @@ namespace DSFI.Jobs
                 if (this.pawn.IsHashIntervalTick(400))
                 {
                     pawn.skills.Learn(SkillDefOf.Shooting, 5f);
-                    MoteMaker.ThrowStone(pawn, TargetLocA);
+                    FleckMaker.ThrowStone(pawn, TargetLocA);
                 }
             };
 

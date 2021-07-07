@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<JobDef>
+		<defName>IdleJob_TakeNap</defName>
+		<driverClass>DSFI.Jobs.IdleJobDriver_TakeNap</driverClass>
+		<reportString>taking a nap.</reportString>
+		<casualInterruptible>true</casualInterruptible>
+	</JobDef>
+
+	<JobDef>
+		<defName>IdleJob_MendItem</defName>
+		<driverClass>DSFI.Jobs.IdleJobDriver_MendItem</driverClass>
+		<reportString>mending TargetA.</reportString>
+		<casualInterruptible>true</casualInterruptible>
+	</JobDef>
+
+	<JobDef>
+		<defName>IdleJob_WatchResearch</defName>
+		<driverClass>DSFI.Jobs.IdleJobDriver_WatchDoing</driverClass>
+		<reportString>watching TargetA do research.</reportString>
+		<casualInterruptible>true</casualInterruptible>
+	</JobDef>
+
+	<JobDef>
+		<defName>IdleJob_WatchWorking</defName>
+		<driverClass>DSFI.Jobs.IdleJobDriver_WatchDoing</driverClass>
+		<reportString>watching TargetA working.</reportString>
+		<casualInterruptible>true</casualInterruptible>
+	</JobDef>
+
+	<JobDef>
+		<defName>IdleJob_ObservingAnimal</defName>
+		<driverClass>DSFI.Jobs.IdleJobDriver_ObservingAnimal</driverClass>
+		<reportString>observing TargetA.</reportString>
+		<casualInterruptible>true</casualInterruptible>
+	</JobDef>
+
+	<JobDef>
+		<defName>IdleJob_MessingAround</defName>
+		<driverClass>DSFI.Jobs.IdleJobDriver_MessingAround</driverClass>
+		<reportString>just sitting idle.</reportString>
+		<casualInterruptible>true</casualInterruptible>
+	</JobDef>
+
+	<JobDef>
+		<defName>IdleJob_LookAroundRoom</defName>
+		<driverClass>DSFI.Jobs.IdleJobDriver_LookAroundRoom</driverClass>
+		<reportString>poking around in TargetA's room.</reportString>
+		<casualInterruptible>true</casualInterruptible>
+	</JobDef>
+
+	<JobDef>
+		<defName>IdleJob_PracticeMelee</defName>
+		<driverClass>DSFI.Jobs.IdleJobDriver_PracticeMelee</driverClass>
+		<reportString>practicing with their TargetA.</reportString>
+		<casualInterruptible>true</casualInterruptible>
+		<alwaysShowWeapon>true</alwaysShowWeapon>
+	</JobDef>
+
+	<JobDef>
+		<defName>IdleJob_ThrowingStone</defName>
+		<driverClass>DSFI.Jobs.IdleJobDriver_ThrowingStone</driverClass>
+		<reportString>throwing small stones.</reportString>
+		<casualInterruptible>true</casualInterruptible>
+	</JobDef>
+
+	<JobDef>
+		<defName>IdleJob_Graffiti</defName>
+		<driverClass>DSFI.Jobs.IdleJobDriver_Graffiti</driverClass>
+		<reportString>has scribbling on the ground.</reportString>
+		<casualInterruptible>true</casualInterruptible>
+	</JobDef>
+
+	<JobDef>
+		<defName>IdleJob_CleaningGun</defName>
+		<driverClass>DSFI.Jobs.IdleJobDriver_CleaningGun</driverClass>
+		<reportString>cleaning their TargetA.</reportString>
+		<casualInterruptible>true</casualInterruptible>
+		<alwaysShowWeapon>true</alwaysShowWeapon>
+	</JobDef>
+
+	<DSFI.IdleJobDef>
+		<defName>IdleJob_Gardening</defName>
+		<driverClass>DSFI.Jobs.IdleJobDriver_Gardening</driverClass>
+		<reportString>watching crops in TargetA.</reportString>
+		<reportStringA>weeding around TargetA.</reportStringA>
+		<reportStringB>killing pests around TargetA.</reportStringB>
+		<casualInterruptible>true</casualInterruptible>
+	</DSFI.IdleJobDef>
+	
+	<JobDef>
+		<defName>IdleJob_Thinking</defName>
+		<driverClass>DSFI.Jobs.IdleJobDriver_Thinking</driverClass>
+		<reportString>thinking about happened with TargetA.</reportString>
+		<casualInterruptible>true</casualInterruptible>
+		<joyDuration>1500</joyDuration>
+		<joyKind>Meditative</joyKind>
+	</JobDef>
+</Defs>

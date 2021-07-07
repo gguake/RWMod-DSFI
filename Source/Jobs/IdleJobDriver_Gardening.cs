@@ -50,7 +50,7 @@ namespace DSFI.Jobs
             gardening.socialMode = RandomSocialMode.SuperActive;
             gardening.WithProgressBar(TargetIndex.A, () => (float)workDone / workTotal);
             gardening.PlaySustainerOrSound(SoundDefOf.Interact_Sow);
-            gardening.WithEffect(() => EffecterDefOf.Harvest, TargetIndex.A);
+            gardening.WithEffect(() => EffecterDefOf.Harvest_Plant, TargetIndex.A);
             gardening.initAction = () =>
             {
                 this.workDone = 0;
