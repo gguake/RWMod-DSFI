@@ -31,7 +31,12 @@ namespace DSFI
                     return wanderJobGiver.TryIssueJobPackage(pawn, new JobIssueParams());
                 }
 
-                if (pawn.needs.food.Starving)
+                if (pawn.needs?.food?.Starving ?? false)
+                {
+                    return wanderJobGiver.TryIssueJobPackage(pawn, new JobIssueParams());
+                }
+
+                if (pawn.story == null)
                 {
                     return wanderJobGiver.TryIssueJobPackage(pawn, new JobIssueParams());
                 }
