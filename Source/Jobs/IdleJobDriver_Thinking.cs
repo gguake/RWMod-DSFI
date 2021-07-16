@@ -47,7 +47,6 @@ namespace DSFI.Jobs
         // TODO
         public RTMoteBubble MakeThinkingBubble(Pawn pawn, Pawn target)
         {
-            RenderTexture iconTex = PortraitsCache.Get(target, new Vector2(128f, 128f), Rot4.South, ColonistBarColonistDrawer.PawnTextureCameraOffset, 1.28205f);
             RTMoteBubble obj = (RTMoteBubble)ThingMaker.MakeThing(MoteDefOf.DSFI_Mote_Thought);
             obj.SetupMoteBubble(job.targetA.Pawn);
             obj.Attach(pawn);

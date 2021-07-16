@@ -19,6 +19,11 @@ namespace DSFI.JobGivers
                 return null;
             }
 
+            if (pawn.skills?.GetSkill(SkillDefOf.Crafting).Level == 0)
+            {
+                return null;
+            }
+
             targets.Clear();
             foreach (var zone in pawn.Map.zoneManager.AllZones.Where(x => x is Zone_Stockpile))
             {

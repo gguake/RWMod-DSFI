@@ -23,12 +23,14 @@ namespace DSFI
             {
                 if (!_texDict.TryGetValue(pawn, out Texture tex))
                 {
-                    tex = new RenderTexture(128, 128, 24)
+                    tex = new RenderTexture(128, 128, 0)
                     {
-                        filterMode = FilterMode.Bilinear
+                        filterMode = FilterMode.Bilinear,
                     };
 
-                    PortraitIconCameraManager.Renderer.RenderPortraitIcon(pawn, (RenderTexture)tex);
+                    Find.PawnCacheRenderer.RenderPawn(pawn, (RenderTexture)tex, new Vector3(0f, 0f, 0.2f), 1f, 0f, Rot4.South, 
+                        renderHead: true, renderBody: false, renderHeadgear: true, renderClothes: false, portrait: true);
+
                     _texDict.Add(pawn, tex);
                 }
                 
