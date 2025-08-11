@@ -14,11 +14,15 @@ namespace DSFI.Jobs
         protected override IEnumerable<Toil> MakeNewToils()
         {
             yield return Toils_Goto.GotoCell(TargetIndex.B, PathEndMode.OnCell);
-            pawn.Rotation = Rot4.Random;
 
-            Toil waiting = Toils_General.Wait(job.def.joyDuration);
+            var waiting = Toils_General.Wait(job.def.joyDuration);
             waiting.socialMode = RandomSocialMode.Quiet;
+            waiting.handlingFacing = true;
             waiting.FailOn(() => !MeditationUtility.CanMeditateNow(pawn) || !MeditationUtility.SafeEnvironmentalConditions(pawn, TargetB.Cell, base.Map));
+            waiting.initAction = () =>
+            {
+                pawn.Rotation = Rot4.Random;
+            };
             waiting.tickIntervalAction = (delta) =>
             {
                 pawn.GainComfortFromCellIfPossible(delta);
@@ -27,7 +31,6 @@ namespace DSFI.Jobs
                     JoyUtility.JoyTickCheckEnd(pawn, delta, JoyTickFullJoyAction.None, 0.2f);
                 }
 
-                waiting.handlingFacing = true;
                 if (pawn.IsHashIntervalTick(400))
                 {
                     MakeThinkingBubble(pawn, TargetA.Pawn);

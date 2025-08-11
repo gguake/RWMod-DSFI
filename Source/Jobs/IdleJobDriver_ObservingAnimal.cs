@@ -16,7 +16,6 @@ namespace DSFI.Jobs
         protected override IEnumerable<Toil> MakeNewToils()
         {
             Pawn target = this.TargetA.Thing as Pawn;
-            float xp = 5f * Mathf.Pow(5f, target.GetStatValue(StatDefOf.Wildness));
 
             this.FailOnDestroyedNullOrForbidden(TargetIndex.A);
             yield return DSFIToils_Moving.GotoNearTarget(TargetIndex.A, Danger.None, moveDistance, lookDistance);

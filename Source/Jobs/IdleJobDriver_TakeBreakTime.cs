@@ -17,17 +17,9 @@ namespace DSFI.Jobs
             Scribe_Values.Look(ref jobFinishGameTick, "jobFinishGameTick");
         }
 
-        public Building Sittable
-        {
-            get
-            {
-                return (Building)job.GetTarget(TargetIndex.A).Thing;
-            }
-        }
-
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-            if (!pawn.Reserve(Sittable, job, 1))
+            if (!pawn.ReserveSittableOrSpot(TargetA.Cell, job))
             {
                 return false;
             }
@@ -54,6 +46,7 @@ namespace DSFI.Jobs
             {
                 var actor = breakTime.actor;
                 actor.pather?.StopDead();
+
                 actor.Rotation = TargetThingA.Rotation;
             };
             breakTime.tickIntervalAction = (delta) =>

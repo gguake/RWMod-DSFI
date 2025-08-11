@@ -25,7 +25,7 @@ namespace DSFI.JobGivers
             }
 
             var sittable = IdleJobUtility.FindNearSittableForIdle(pawn);
-            if (sittable != null)
+            if (sittable.IsValid)
             {
                 return new Job(IdleJobDefOf.IdleJob_TakeBreakTime, sittable)
                 {

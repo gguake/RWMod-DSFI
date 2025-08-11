@@ -29,7 +29,7 @@ namespace DSFI.Jobs
 
             Toil practice = Toils_General.Wait(2000);
             practice.socialMode = RandomSocialMode.Normal;
-            practice.FailOn(() => this.TargetB.Cell.IsForbidden(this.pawn));
+            practice.handlingFacing = true;
             practice.tickAction = () =>
             {
                 if (pawn.IsHashIntervalTick(200))
@@ -40,13 +40,13 @@ namespace DSFI.Jobs
                         jitterer.AddOffset(Rand.Range(0.25f, 0.75f), pawn.Rotation.AsAngle);
                         if (Rand.Value > 0.7f)
                         {
-                            practice.handlingFacing = true;
                             pawn.Rotation = Rot4.Random;
                         }
                     }
                 }
             };
-            
+            practice.FailOn(() => this.TargetB.Cell.IsForbidden(this.pawn));
+
             yield return practice;
             yield break;
         }

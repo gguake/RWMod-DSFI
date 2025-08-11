@@ -20,11 +20,9 @@ namespace DSFI.Jobs
             yield return Toils_Goto.GotoCell(TargetIndex.B, PathEndMode.OnCell);
 
             Toil looking = Toils_General.Wait(1500);
-            looking.FailOn(() => this.TargetB.Cell.IsForbidden(this.pawn));
+            looking.handlingFacing = true;
             looking.tickAction = () =>
             {
-                
-                looking.handlingFacing = true;
                 if (pawn.IsHashIntervalTick(250))
                 {
                     if (pawn.Rotation == Rot4.North)
@@ -45,6 +43,7 @@ namespace DSFI.Jobs
                     }
                 }
             };
+            looking.FailOn(() => this.TargetB.Cell.IsForbidden(this.pawn));
 
             looking.AddFinishAction(() =>
             {

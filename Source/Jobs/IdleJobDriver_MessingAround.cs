@@ -20,13 +20,16 @@ namespace DSFI.Jobs
             Building building = TargetA.Thing as Building;
             
             yield return Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.OnCell);
-            pawn.Rotation = Rot4.Random;
 
             Toil waiting = Toils_General.Wait(2000);
             waiting.socialMode = RandomSocialMode.SuperActive;
+            waiting.handlingFacing = true;
+            waiting.initAction = () =>
+            {
+                pawn.Rotation = Rot4.Random;
+            };
             waiting.tickAction = () =>
             {
-                waiting.handlingFacing = true;
                 if (pawn.IsHashIntervalTick(150))
                 {
                     if (pawn.Rotation == Rot4.North)
