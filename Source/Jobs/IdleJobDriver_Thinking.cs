@@ -19,12 +19,12 @@ namespace DSFI.Jobs
             Toil waiting = Toils_General.Wait(job.def.joyDuration);
             waiting.socialMode = RandomSocialMode.Quiet;
             waiting.FailOn(() => !MeditationUtility.CanMeditateNow(pawn) || !MeditationUtility.SafeEnvironmentalConditions(pawn, TargetB.Cell, base.Map));
-            waiting.tickAction = () =>
+            waiting.tickIntervalAction = (delta) =>
             {
-                pawn.GainComfortFromCellIfPossible();
+                pawn.GainComfortFromCellIfPossible(delta);
                 if (pawn.needs.joy != null)
                 {
-                    JoyUtility.JoyTickCheckEnd(pawn, JoyTickFullJoyAction.None, 0.2f);
+                    JoyUtility.JoyTickCheckEnd(pawn, delta, JoyTickFullJoyAction.None, 0.2f);
                 }
 
                 waiting.handlingFacing = true;

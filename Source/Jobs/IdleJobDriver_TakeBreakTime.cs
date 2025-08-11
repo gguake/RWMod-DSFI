@@ -56,7 +56,7 @@ namespace DSFI.Jobs
                 actor.pather?.StopDead();
                 actor.Rotation = TargetThingA.Rotation;
             };
-            breakTime.tickAction = () =>
+            breakTime.tickIntervalAction = (delta) =>
             {
                 var actor = breakTime.actor;
                 var job = actor.CurJob;
@@ -68,7 +68,7 @@ namespace DSFI.Jobs
                 }
                 else
                 {
-                    actor.GainComfortFromCellIfPossible(true);
+                    actor.GainComfortFromCellIfPossible(delta, true);
                     actor.needs.rest.TickResting(0.01f);
                 }
             };
